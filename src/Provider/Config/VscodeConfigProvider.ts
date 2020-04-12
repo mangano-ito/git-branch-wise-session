@@ -1,11 +1,9 @@
 import * as vscode from 'vscode';
 
 import Config from '#/Model/Config';
+import ConfigProvider, { OnConfigDirtyListener } from './ConfigProvider';
 
-/** listener called when configurations get updated */
-type OnConfigDirtyListener = (config: Config) => any;
-
-export default class ConfigProvider {
+export default class VscodeConfigProvider implements ConfigProvider {
     private onConfigDirtyListener: OnConfigDirtyListener = () => {};
     private config: vscode.WorkspaceConfiguration;
 
@@ -18,9 +16,6 @@ export default class ConfigProvider {
         );
     }
 
-    /**
-     * provides the saved configuration
-     */
     provide(): Config {
         const shouldAutoRestoreOnBranchSwitches = this.config.get<boolean>('should-auto-restore-on-branch-switches') || true;
 
@@ -29,10 +24,6 @@ export default class ConfigProvider {
         };
     }
 
-    /**
-     * set a listener called when some of configurations get updated
-     * @param listener listener to attach
-     */
     setOnConfigDirtyListener(listener: OnConfigDirtyListener) {
         this.onConfigDirtyListener = listener;
     }
