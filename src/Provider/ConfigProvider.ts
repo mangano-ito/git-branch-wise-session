@@ -12,7 +12,7 @@ export default class ConfigProvider {
     constructor(context: vscode.ExtensionContext) {
         this.config = vscode.workspace.getConfiguration('git-branch-wise-session');
         context.subscriptions.push(
-            vscode.workspace.onDidChangeConfiguration((e: vscode.ConfigurationChangeEvent) => {
+            vscode.workspace.onDidChangeConfiguration(() => {
                 this.onConfigDirtyListener(this.provide());
             }),
         );
