@@ -24,6 +24,11 @@ export default class StorageBackedSessionRepository implements SessionRepository
         this.onSessionUpdatedListener();
     }
 
+    removeAll() {
+        this.storage.clear();
+        this.onSessionUpdatedListener();
+    }
+
     get allSessions(): Session[] {
         return [...this.storage.values<Session>()];
     }
