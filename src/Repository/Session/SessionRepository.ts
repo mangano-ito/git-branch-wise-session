@@ -21,6 +21,11 @@ export default interface SessionRepository {
     remove(name: string): any;
 
     /**
+     * removed all saved sessions
+     */
+    removeAll(): any;
+
+    /**
      * update given session
      * @param session session to update
      */
