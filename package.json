@@ -10,9 +10,31 @@
 		"Other"
 	],
 	"activationEvents": [
+		"onCommand:git-branch-wise-session.restoreSession",
+		"onCommand:git-branch-wise-session.saveSession",
+		"onCommand:git-branch-wise-session.clearSession",
+		"onCommand:git-branch-wise-session.clearAllSessions"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"commands": [
+			{
+				"command": "git-branch-wise-session.restoreSession",
+				"title": "Restore Saved Session for Current Branch"
+			},
+			{
+				"command": "git-branch-wise-session.saveSession",
+				"title": "Save Session for Current Branch"
+			},
+			{
+				"command": "git-branch-wise-session.clearSession",
+				"title": "Clear Saved Session for Current Branch"
+			},
+			{
+				"command": "git-branch-wise-session.clearAllSessions",
+				"title": "Clear All Saved Sessions"
+			}
+		],
 		"configuration": {
 			"title": "Git Branch-wise Session",
 			"properties": {
