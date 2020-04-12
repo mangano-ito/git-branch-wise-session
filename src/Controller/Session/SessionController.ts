@@ -5,7 +5,7 @@ import WindowDelegate from '#/Delegate/Window/WindowDelegate';
 import SessionManagerDelegate from '#/Delegate/SessionManager/SessionManagerDelegate';
 
 import SessionRepository from '#/Repository/Session/SessionRepository';
-import ConfigProvider from '#/Provider/ConfigProvider';
+import ConfigProvider from '#/Provider/Config/ConfigProvider';
 
 export default class SessionController {
     private config: Config;
