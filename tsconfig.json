@@ -6,6 +6,11 @@
 		"lib": [
 			"es6"
 		],
+		"baseUrl": ".",
+		"paths": {
+			"#/*": ["src/*"],
+			"git": ["src/@types/git.d.ts"]
+		},
 		"sourceMap": true,
 		"rootDir": "src",
 		"strict": true,
