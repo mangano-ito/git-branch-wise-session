@@ -8,12 +8,9 @@
 	},
 	"categories": [
 		"Other"
-	],
+    ],
 	"activationEvents": [
-		"onCommand:git-branch-wise-session.restoreSession",
-		"onCommand:git-branch-wise-session.saveSession",
-		"onCommand:git-branch-wise-session.clearSession",
-		"onCommand:git-branch-wise-session.clearAllSessions"
+		"*"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -45,7 +42,10 @@
 				}
 			}
 		}
-	},
+    },
+    "extensionDependencies": [
+        "vscode.git"
+    ],
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
