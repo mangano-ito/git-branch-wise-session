@@ -53,7 +53,24 @@
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run compile && npm run lint",
 		"test": "node ./out/test/runTest.js"
-	},
+    },
+    "jest": {
+        "moduleFileExtensions": ["ts", "js"],
+        "moduleNameMapper": {
+            "^#/(.+)": "<rootDir>/src/$1"
+        },
+        "transform": {
+            "^.+\\.ts$": "ts-jest"
+        },
+        "globals": {
+            "ts-jest": {
+                "tsConfig": "tsconfig.json"
+            }
+        },
+        "testMatch": [
+            "**/tests/**/*.test.ts"
+        ]
+    },
 	"devDependencies": {
 		"@types/glob": "^7.1.1",
 		"@types/jest": "^25.2.1",
