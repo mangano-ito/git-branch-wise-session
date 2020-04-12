@@ -13,6 +13,16 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"configuration": {
+			"title": "Git Branch-wise Session",
+			"properties": {
+				"git-branch-wise-session.shouldAutoRestoreOnBranchSwitches": {
+					"type": "boolean",
+					"default": true,
+					"description": "Restore sessions automatically on Git branch switches."
+				}
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
