@@ -18,6 +18,12 @@ The Extension automatically restores the saved Session for you whenever you swit
 
 To enable this feature, you should configure `git-branch-wise-session.shouldAutoRestoreOnBranchSwitches` to `true`. See `Configurations`.
 
+## How to Use
+
+- Save Current Session: `Ctrl + P` / `Cmd + P` → Type `> Save Session for Current Branch`
+- Restore Session for Current Branch: `Ctrl + P` / `Cmd + P` → Type `> Restore Saved Session for Current Branch`
+- Configure Extension: `Ctrl + P` / `Cmd + P` → Type `> Open Settings` → Choose settings to configure.
+
 ## Prerequisites
 
 - You **must** enable [`vscode.git`](vscode:extension/vscode.git) Extension beforehand.
