@@ -12,7 +12,7 @@
 			"git": ["src/@types/git.d.ts"]
 		},
 		"sourceMap": true,
-		"rootDir": "src",
+		"rootDir": "./",
 		"strict": true,
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true,
