@@ -20,8 +20,12 @@ To enable this feature, you should configure `git-branch-wise-session.shouldAuto
 
 ## How to Use
 
+Start typing with `Ctrl + P` or `Cmd + P` → `> Git Branch-wise Session`
+
 - Save Current Session: `Ctrl + P` / `Cmd + P` → Type `> Save Session for Current Branch`
 - Restore Session for Current Branch: `Ctrl + P` / `Cmd + P` → Type `> Restore Saved Session for Current Branch`
+- Clear Saved Session for Current Branch: `Ctrl + P` / `Cmd + P` → Type `> Clear Saved Session for Current Branch`
+- Clear All Saved Session: `Ctrl + P` / `Cmd + P` → Type `> Clear All Saved Sessions`
 - Configure Extension: `Ctrl + P` / `Cmd + P` → Type `> Open Settings` → Choose settings to configure.
 
 ## Prerequisites
