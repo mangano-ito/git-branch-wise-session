@@ -9,6 +9,7 @@
     "categories": [
         "Other"
     ],
+    "keywords": ["git", "session", "tab"],
     "license": "SEE LICENSE IN LICENSE",
     "publisher": "mangano-ito",
     "homepage": "https://github.com/mangano-ito/git-branch-wise-session",
