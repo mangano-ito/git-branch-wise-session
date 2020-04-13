@@ -17,7 +17,7 @@ export default class VscodeConfigProvider implements ConfigProvider {
     }
 
     provide(): Config {
-        const shouldAutoRestoreOnBranchSwitches = this.config.get<boolean>('should-auto-restore-on-branch-switches') || true;
+        const shouldAutoRestoreOnBranchSwitches = this.config.get<boolean>('git-branch-wise-session.shouldAutoRestoreOnBranchSwitches', false);
 
         return {
             shouldAutoRestoreOnBranchSwitches,
