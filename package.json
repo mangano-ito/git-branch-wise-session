@@ -33,19 +33,19 @@
         "commands": [
             {
                 "command": "git-branch-wise-session.restoreSession",
-                "title": "Restore Saved Session for Current Branch"
+                "title": "Git Branch-wise Session: Restore Saved Session for Current Branch"
             },
             {
                 "command": "git-branch-wise-session.saveSession",
-                "title": "Save Session for Current Branch"
+                "title": "Git Branch-wise Session: Save Session for Current Branch"
             },
             {
                 "command": "git-branch-wise-session.clearSession",
-                "title": "Clear Saved Session for Current Branch"
+                "title": "Git Branch-wise Session: Clear Saved Session for Current Branch"
             },
             {
                 "command": "git-branch-wise-session.clearAllSessions",
-                "title": "Clear All Saved Sessions"
+                "title": "Git Branch-wise Session: Clear All Saved Sessions"
             }
         ],
         "configuration": {
