@@ -1,6 +1,6 @@
 # Git Branch-wise Session
 
-An Extension to keep tabs for each Git branch.
+An Extension to keep Tabs for each Git branch.
 
 ## See It in Action
 
@@ -8,7 +8,7 @@ An Extension to keep tabs for each Git branch.
 
 ![Manual Save and Restore for Current Branch](./assets/save-and-restore.gif)
 
-You can manually save opened Tabs for current Git Branch, so that you can restore tabs when you switched back later.
+You can manually save opened Tabs for current Git Branch, so that you can restore tabs when you switch back later.
 
 ### Restore Sessions Automatically on Git Branch Switches
 
