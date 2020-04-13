@@ -14,7 +14,7 @@ You can manually save opened Tabs for current Git Branch, so that you can restor
 
 ![Auto Restore on Branch Switches](./assets/auto-restore.gif)
 
-The Extension automatically restores your saved Session for you whenever you switched to another Git Branch. If no saved session available, the Extension simply ignores.
+The Extension automatically restores your saved Session for you whenever you switch to another Git Branch. If no saved sessions are available, the Extension simply ignores.
 
 To enable this feature, you should configure `git-branch-wise-session.shouldAutoRestoreOnBranchSwitches` to `true`. See `Configurations`.
 
