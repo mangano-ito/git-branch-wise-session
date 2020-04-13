@@ -38,7 +38,7 @@
 			"properties": {
 				"git-branch-wise-session.shouldAutoRestoreOnBranchSwitches": {
 					"type": "boolean",
-					"default": true,
+					"default": false,
 					"description": "Restore sessions automatically on Git branch switches."
 				}
 			}
