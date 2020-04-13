@@ -2,7 +2,7 @@
     "name": "git-branch-wise-session",
     "displayName": "Git Branch-wise Session",
     "description": "Manages Editor Sessions for Each Git Branch",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "engines": {
         "vscode": "^1.43.0"
     },
