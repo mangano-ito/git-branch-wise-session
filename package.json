@@ -1,13 +1,13 @@
 {
-	"name": "git-branch-wise-session",
-	"displayName": "Git Branch-wise Session",
-	"description": "Manages Editor Sessions for Each Git Branch",
-	"version": "0.0.1",
-	"engines": {
-		"vscode": "^1.43.0"
-	},
-	"categories": [
-		"Other"
+    "name": "git-branch-wise-session",
+    "displayName": "Git Branch-wise Session",
+    "description": "Manages Editor Sessions for Each Git Branch",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.43.0"
+    },
+    "categories": [
+        "Other"
     ],
     "license": "SEE LICENSE IN LICENSE",
     "publisher": "mangano-ito",
@@ -20,50 +20,50 @@
         "url": "https://github.com/mangano-ito/git-branch-wise-session.git"
     },
     "icon": "assets/icon.png",
-	"activationEvents": [
-		"*"
-	],
-	"main": "./out/extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "git-branch-wise-session.restoreSession",
-				"title": "Restore Saved Session for Current Branch"
-			},
-			{
-				"command": "git-branch-wise-session.saveSession",
-				"title": "Save Session for Current Branch"
-			},
-			{
-				"command": "git-branch-wise-session.clearSession",
-				"title": "Clear Saved Session for Current Branch"
-			},
-			{
-				"command": "git-branch-wise-session.clearAllSessions",
-				"title": "Clear All Saved Sessions"
-			}
-		],
-		"configuration": {
-			"title": "Git Branch-wise Session",
-			"properties": {
-				"git-branch-wise-session.shouldAutoRestoreOnBranchSwitches": {
-					"type": "boolean",
-					"default": false,
-					"description": "Restore sessions automatically on Git branch switches."
-				}
-			}
-		}
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "git-branch-wise-session.restoreSession",
+                "title": "Restore Saved Session for Current Branch"
+            },
+            {
+                "command": "git-branch-wise-session.saveSession",
+                "title": "Save Session for Current Branch"
+            },
+            {
+                "command": "git-branch-wise-session.clearSession",
+                "title": "Clear Saved Session for Current Branch"
+            },
+            {
+                "command": "git-branch-wise-session.clearAllSessions",
+                "title": "Clear All Saved Sessions"
+            }
+        ],
+        "configuration": {
+            "title": "Git Branch-wise Session",
+            "properties": {
+                "git-branch-wise-session.shouldAutoRestoreOnBranchSwitches": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Restore sessions automatically on Git branch switches."
+                }
+            }
+        }
     },
     "extensionDependencies": [
         "vscode.git"
     ],
-	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"lint": "eslint src --ext ts",
-		"watch": "tsc -watch -p ./",
-		"pretest": "npm run compile && npm run lint",
-		"test": "node ./out/test/runTest.js"
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "lint": "eslint src --ext ts",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "test": "node ./out/test/runTest.js"
     },
     "jest": {
         "moduleFileExtensions": ["ts", "js"],
@@ -82,20 +82,20 @@
             "**/tests/**/*.test.ts"
         ]
     },
-	"devDependencies": {
-		"@types/glob": "^7.1.1",
-		"@types/jest": "^25.2.1",
-		"@types/mocha": "^7.0.2",
-		"@types/node": "^13.11.0",
-		"@types/vscode": "^1.44.0",
-		"@typescript-eslint/eslint-plugin": "^2.26.0",
-		"@typescript-eslint/parser": "^2.26.0",
-		"eslint": "^6.8.0",
-		"glob": "^7.1.6",
-		"jest": "^25.3.0",
-		"mocha": "^7.1.1",
-		"ts-jest": "^25.3.1",
-		"typescript": "^3.8.3",
-		"vscode-test": "^1.3.0"
-	}
+    "devDependencies": {
+        "@types/glob": "^7.1.1",
+        "@types/jest": "^25.2.1",
+        "@types/mocha": "^7.0.2",
+        "@types/node": "^13.11.0",
+        "@types/vscode": "^1.44.0",
+        "@typescript-eslint/eslint-plugin": "^2.26.0",
+        "@typescript-eslint/parser": "^2.26.0",
+        "eslint": "^6.8.0",
+        "glob": "^7.1.6",
+        "jest": "^25.3.0",
+        "mocha": "^7.1.1",
+        "ts-jest": "^25.3.1",
+        "typescript": "^3.8.3",
+        "vscode-test": "^1.3.0"
+    }
 }
