@@ -33,6 +33,11 @@ Start typing with `Ctrl + P` or `Cmd + P` → `> Git Branch-wise Session`
 - You **must** enable [`vscode.git`](vscode:extension/vscode.git) Extension beforehand.
   - This Extension is **one of VSCode builtin Extensions**, so you don't need to install this. You have already enabled it, unless you had disabled it.
 
+## Install
+
+Get it on [Git Branch-wise Session - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=mangano-ito.git-branch-wise-session).
+
+
 ## Configurations
 
 ### `git-branch-wise-session.shouldAutoRestoreOnBranchSwitches`
