@@ -9,7 +9,16 @@
 	"categories": [
 		"Other"
     ],
+    "license": "SEE LICENSE IN LICENSE",
     "publisher": "mangano-ito",
+    "homepage": "https://github.com/mangano-ito/git-branch-wise-session",
+    "bugs": {
+        "url": "https://github.com/mangano-ito/git-branch-wise-session/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mangano-ito/git-branch-wise-session.git"
+    },
     "icon": "assets/icon.png",
 	"activationEvents": [
 		"*"
