@@ -10,6 +10,7 @@
 		"Other"
     ],
     "publisher": "mangano-ito",
+    "icon": "assets/icon.png",
 	"activationEvents": [
 		"*"
 	],
