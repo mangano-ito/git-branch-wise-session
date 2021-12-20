@@ -35,9 +35,9 @@ export default class SessionController {
         }
         try {
             await this.restore(nameOfSession);
-            await this.windowDelegate.showMessage(`You have switched to session "${nameOfSession}".`);
+            this.windowDelegate.showMessage(`You have switched to session "${nameOfSession}".`);
         } catch (exception) {
-            await this.windowDelegate.showMessage(`Session "${nameOfSession}" is not yet saved.`);
+            this.windowDelegate.showMessage(`Session "${nameOfSession}" is not yet saved.`);
         }
     }
 
