@@ -124,7 +124,7 @@ export default class VscodeSessionManagerDelegate implements SessionManagerDeleg
         for (const editor of session.editors) {
             const document = await vscode.workspace.openTextDocument(editor.uri);
             const viewColumn = editor.column >= 0 ? editor.column : undefined;
-            await vscode.window.showTextDocument(document, viewColumn);
+            await vscode.window.showTextDocument(document, {viewColumn: viewColumn, preview: false});
         };
     }
 }
