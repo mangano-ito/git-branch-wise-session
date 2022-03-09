@@ -20,16 +20,19 @@ export default class SessionController {
         configProvider.setOnConfigDirtyListener((config: Config) => { this.config = config; });
         sessionManagerDelegate.setOnSessionSaveRequestedListener((session) => this.onSessionUpdated(session));
         sessionManagerDelegate.setOnSessionRestoreRequestedListener((nameOfSession) => this.onSessionRestoreRequested(nameOfSession));
-        sessionManagerDelegate.setOnSessionSwitchedListener((nameOfSession: string) => this.onSessionSwitched(nameOfSession));
+        sessionManagerDelegate.setOnSessionSwitchedListener((nameOfSession: string, lastSession: Session | undefined) => this.onSessionSwitched(nameOfSession, lastSession));
         sessionManagerDelegate.setOnSessionAllClearRequestedListener(() => this.onSessionAllClearRequested());
     }
 
     async onSessionUpdated(session: Session) {
         this.repo.set(session);
-        await this.windowDelegate.showMessage(`Session "${session.name}" has been saved.`);
+        this.windowDelegate.showMessage(`Session "${session.name}" has been saved.`);
     }
 
-    async onSessionSwitched(nameOfSession: string) {
+    async onSessionSwitched(nameOfSession: string, lastSession: Session | undefined) {
+        if (this.config.autoSaveBranchOnSwitch && lastSession) {
+            await this.onSessionUpdated(lastSession);
+        }
         if (!this.config.shouldAutoRestoreOnBranchSwitches) {
             return;
         }

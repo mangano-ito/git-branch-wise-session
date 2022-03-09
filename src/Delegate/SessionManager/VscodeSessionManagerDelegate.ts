@@ -45,8 +45,14 @@ export default class VscodeSessionManagerDelegate implements SessionManagerDeleg
                 this.onSessionUpdatedListener(this.intoSession(editors));
             }),
         );
-        this.gitDelegate.setOnBranchSwitchedListener(() => {
-            this.onSessionSwitchedListener(this.nameOfSession);
+        this.gitDelegate.setOnBranchSwitchedListener(async (_, lastBranchName) => {
+            this.onSessionSwitchedListener(
+                this.nameOfSession,
+                lastBranchName ? {
+                    ...(await this.getCurrentSession()),
+                    name: lastBranchName
+                } : undefined,
+            );
         });
     }
 

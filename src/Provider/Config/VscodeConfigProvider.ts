@@ -19,9 +19,11 @@ export default class VscodeConfigProvider implements ConfigProvider {
     provide(): Config {
         this.config = vscode.workspace.getConfiguration('git-branch-wise-session');
         const shouldAutoRestoreOnBranchSwitches = this.config.get<boolean>('shouldAutoRestoreOnBranchSwitches', false);
+        const autoSaveBranchOnSwitch = this.config.get<boolean>('autoSaveBranchOnSwitch', false);
 
         return {
             shouldAutoRestoreOnBranchSwitches,
+            autoSaveBranchOnSwitch,
         };
     }
 

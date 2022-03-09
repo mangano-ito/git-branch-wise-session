@@ -1,5 +1,5 @@
 /** listener called when branch is switched */
-export type OnBranchSwitchedListener = (nameOfBranch: string | undefined) => any;
+export type OnBranchSwitchedListener = (nameOfBranch: string | undefined, lastBranchName: string | undefined) => any;
 
 /**
  * Git-based Controller Delegate
