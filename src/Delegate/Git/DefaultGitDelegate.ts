@@ -23,7 +23,6 @@ export default class DefaultGitDelegate implements GitDelegate {
         }
         this.git = git;
 
-        // FIXME
         this.lastCurrentBranchName = this.currentBranchName;
 
         const initializer = this.git.onDidChangeState((e) => {
