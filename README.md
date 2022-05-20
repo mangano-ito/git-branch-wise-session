@@ -47,4 +47,11 @@ Get it on [Git Branch-wise Session - Visual Studio Marketplace](https://marketpl
 - `type`: `boolean`
 - `default`: `false`
 
-You should enable this option to restore sessions automatically on Git branch switches.
+You should enable this option to restore sessions automatically on branch switches.
+
+### `git-branch-wise-session.autoSaveBranchOnSwitch`
+
+- `type`: `boolean`
+- `default`: `false`
+
+Whether a session should be saved on branch switching.
