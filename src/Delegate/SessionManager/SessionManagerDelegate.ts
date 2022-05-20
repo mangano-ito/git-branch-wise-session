@@ -7,7 +7,7 @@ export type OnSessionSaveRequestedListener = (session: Session) => any;
 /** listener called when session restore is requested */
 export type OnSessionRestoreRequestedListener = (nameOfSession: string) => any;
 /** listener called on session switches */
-export type OnSessionSwitchedListener = (nameOfSession: string) => any;
+export type OnSessionSwitchedListener = (nameOfSession: string, lastSession: Session | undefined) => any;
 /** listener called when forget current session is requested */
 export type OnSessionClearRequestedListener = (nameOfSession: string) => any;
 /** listener called when forget all sessions is requested */

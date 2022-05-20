@@ -10,6 +10,8 @@ import SessionManagerDelegate, {
     OnSessionClearRequestedListener,
     OnSessionAllClearRequestedListener,
 } from './SessionManagerDelegate';
+import ConfigProvider from '#/Provider/Config/ConfigProvider';
+import Config from '#/Model/Config';
 
 const DEFAULT_SESSION_NAME = 'untitled session';
 
@@ -23,11 +25,14 @@ export default class VscodeSessionManagerDelegate implements SessionManagerDeleg
     private onSessionAllClearRequestedListener: OnSessionAllClearRequestedListener = () => {};
     private onSessionUpdatedListener: OnSessionUpdatedListener = () => {};
     private onSessionSwitchedListener: OnSessionSwitchedListener = () => {};
+    private config: Config;
 
     constructor(
         context: vscode.ExtensionContext,
         private gitDelegate: GitDelegate,
+        configProvider: ConfigProvider,
     ) {
+        this.config = configProvider.provide();
         context.subscriptions.push(
             vscode.commands.registerCommand('git-branch-wise-session.saveSession', async () => {
                 this.onSessionSaveRequestedListener(await this.getCurrentSession());
@@ -45,8 +50,14 @@ export default class VscodeSessionManagerDelegate implements SessionManagerDeleg
                 this.onSessionUpdatedListener(this.intoSession(editors));
             }),
         );
-        this.gitDelegate.setOnBranchSwitchedListener(() => {
-            this.onSessionSwitchedListener(this.nameOfSession);
+        this.gitDelegate.setOnBranchSwitchedListener(async (_, lastBranchName) => {
+            this.onSessionSwitchedListener(
+                this.nameOfSession,
+                lastBranchName && this.config.autoSaveBranchOnSwitch ? {
+                    ...(await this.getCurrentSession()),
+                    name: lastBranchName
+                } : undefined,
+            );
         });
     }
 

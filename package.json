@@ -55,6 +55,11 @@
                     "type": "boolean",
                     "default": false,
                     "description": "Restore sessions automatically on Git branch switches."
+                },
+                "git-branch-wise-session.autoSaveBranchOnSwitch": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Automatically save the current session when swapping branches."
                 }
             }
         }

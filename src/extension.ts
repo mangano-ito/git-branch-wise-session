@@ -11,7 +11,7 @@ import VscodeConfigProvider from './Provider/Config/VscodeConfigProvider';
 export async function activate(context: vscode.ExtensionContext) {
 	const configProvider = new VscodeConfigProvider(context);
     const windowDelegate = new VscodeMainWindowDelegate();
-    const sessionManagerDelegate = new VscodeSessionManagerDelegate(context, new DefaultGitDelegate());
+    const sessionManagerDelegate = new VscodeSessionManagerDelegate(context, new DefaultGitDelegate(), configProvider);
     const repo = new StorageBackedSessionRepository(new WorkspaceStorage(context));
 
 	new SessionController(repo, sessionManagerDelegate, windowDelegate, configProvider);

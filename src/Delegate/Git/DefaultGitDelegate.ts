@@ -23,16 +23,21 @@ export default class DefaultGitDelegate implements GitDelegate {
         }
         this.git = git;
 
-        // FIXME
         this.lastCurrentBranchName = this.currentBranchName;
-        // FIXME: what if a repository is newly set up after this initialization?
-        this.currentRepository?.state?.onDidChange(() => {
-            // emit only when current branch is switched
-            if (this.lastCurrentBranchName !== this.currentBranchName) {
-                this.lastCurrentBranchName = this.currentBranchName;
-                this.onBranchSwitchedListener(this.currentBranchName);
+
+        const initializer = this.git.onDidChangeState((e) => {
+            if (e === "initialized") {
+                this.currentRepository?.state?.onDidChange(async () => {
+                    // emit only when current branch is switched
+                    if (this.lastCurrentBranchName !== this.currentBranchName) {
+                        const tempLastBranchName = this.lastCurrentBranchName;
+                        this.lastCurrentBranchName = this.currentBranchName;
+                        this.onBranchSwitchedListener(this.currentBranchName, tempLastBranchName);
+                    }
+                });
+                initializer.dispose();
             }
-        });
+        }, this);
     }
 
     /** @inheritdoc */
